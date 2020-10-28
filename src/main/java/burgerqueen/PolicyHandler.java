@@ -15,5 +15,13 @@ public class PolicyHandler{
 
     }
 
+    @StreamListener(KafkaProcessor.INPUT)
+    public void wheneverPaid_StartDelivery(@Payload Paid paid){
+
+        if(paid.isMe()){
+
+        }
+    }
+
 
 }

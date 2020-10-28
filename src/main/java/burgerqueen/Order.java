@@ -2,11 +2,14 @@ package burgerqueen;
 
 import javax.persistence.*;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import java.util.List;
 
 @Entity
 @Table(name="Order_table")
 public class Order {
+
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -26,6 +29,7 @@ public class Order {
 
         //Following code causes dependency to external APIs
         // it is NOT A GOOD PRACTICE. instead, Event-Policy mapping is recommended.
+        // it is NOT A GOOD PRACTICE. instead, Event-Policy mapping is recommended.
 
 
 
@@ -42,6 +46,16 @@ public class Order {
 
     @PostPersist
     public void onPostPersist(){
+        Ordered ordered = new Ordered();
+        BeanUtils.copyProperties(this, ordered);
+        ordered.publishAfterCommit();
+
+        try {
+            Thread.currentThread().sleep((long) (3000));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         burgerqueen.external.Payment payment = new burgerqueen.external.Payment();
 
         payment.setOrderId(this.getId());

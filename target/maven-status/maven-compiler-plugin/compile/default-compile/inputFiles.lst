@@ -4,6 +4,7 @@ E:\BurgeQueen\order\src\main\java\burgerqueen\OrderController.java
 E:\BurgeQueen\order\src\main\java\burgerqueen\PolicyHandler.java
 E:\BurgeQueen\order\src\main\java\burgerqueen\Ordered.java
 E:\BurgeQueen\order\src\main\java\burgerqueen\AbstractEvent.java
+E:\BurgeQueen\order\src\main\java\burgerqueen\Paid.java
 E:\BurgeQueen\order\src\main\java\burgerqueen\config\kafka\KafkaProcessor.java
 E:\BurgeQueen\order\src\main\java\burgerqueen\external\PaymentService.java
 E:\BurgeQueen\order\src\main\java\burgerqueen\Order.java
