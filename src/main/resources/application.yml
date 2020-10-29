@@ -68,4 +68,4 @@ spring:
           contentType: application/json
 api:
   url:
-    payment: http://localhost:8085
+    payment: http://payment:80
