@@ -69,3 +69,12 @@ spring:
 api:
   url:
     payment: ${configurl}
+
+feign:
+  hystrix:
+    enabled: true
+
+hystrix:
+  command:
+    default:
+      execution.isolation.thread.timeoutInMilliseconds: 680

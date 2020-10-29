@@ -50,12 +50,6 @@ public class Order {
         BeanUtils.copyProperties(this, ordered);
         ordered.publishAfterCommit();
 
-        try {
-            Thread.currentThread().sleep((long) (3000));
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
         burgerqueen.external.Payment payment = new burgerqueen.external.Payment();
 
         payment.setOrderId(this.getId());
